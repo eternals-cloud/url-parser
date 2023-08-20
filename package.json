@@ -1,0 +1,45 @@
+{
+  "name": "@eternaljs/url-parser",
+  "version": "1.0.0",
+  "description": "This basic package allows you to parse a URL into its singular parts, i.e protocol, username, password, hostname, port, domain, subdomain.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Chandra Sekhar",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eternaljs/url-parser.git"
+  },
+  "keywords": [
+    "domain",
+    "hash",
+    "hostname",
+    "href",
+    "origin",
+    "param",
+    "parser",
+    "path",
+    "pathname",
+    "port",
+    "protocol",
+    "query",
+    "search",
+    "subdomain",
+    "url"
+  ],
+  "bugs": {
+    "url": "https://github.com/eternaljs/url-parser/issues"
+  },
+  "homepage": "https://github.com/eternaljs/url-parser#readme",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
