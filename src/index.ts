@@ -22,7 +22,7 @@ interface ResponseInterface {
     url?: string,
 }
 
-function urlInfo(url: string, options?: OptionsInterface) {
+function getUrlInfo(url: string, options?: OptionsInterface) {
     try {
         console.log("options", options);
         const urlObj = new URL(url);
@@ -78,4 +78,4 @@ function isNumeric(url: any) {
     }
 }
 
-export { urlInfo }
+export { getUrlInfo };

@@ -24,13 +24,13 @@ These examples assume you're in node, or something similar:
 
 ```javascript
 // JavaScript
-const { getURL } = require('@eternaljs/url-parser');
+const { getUrlInfo } = require('@eternaljs/url-parser');
 
 // TypeScript
-import { getURL } from '@eternaljs/url-parser';
+import { getUrlInfo } from '@eternaljs/url-parser';
 
 
-const details = getURL('https://console.cloud.google.com/welcome?project=eternaljs');
+const details = getUrlInfo('https://console.cloud.google.com/welcome?project=eternaljs');
 console.log(details);
 
 ```
