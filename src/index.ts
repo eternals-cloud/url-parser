@@ -24,7 +24,6 @@ interface ResponseInterface {
 
 function getUrlInfo(url: string, options?: OptionsInterface) {
     try {
-        console.log("options", options);
         const urlObj = new URL(url);
         const hostParts = urlObj.hostname.split('.');
         const params = String(urlObj?.pathname)?.split("/")?.filter((url) => url)
