@@ -77,4 +77,37 @@ function isNumeric(url: any) {
     }
 }
 
-export { getUrlInfo };
+function getOriginalUrlInfo(req: any, debug: boolean = false, options?: OptionsInterface) {
+    try {
+        const ip_address = req.headers.ip_address || req.ip.toString().replace('::ffff:', '');
+        let url = `${req.headers.origin}${req.originalUrl}`
+        if (debug) {
+            url = `${req.protocol}://${req.headers.host}${req.originalUrl}`
+        }
+        const url_details = getUrlInfo(url, options)
+        return {
+            ...url_details,
+            headers: req.headers || "",
+            'user-agent': req.headers['user-agent'] || "",
+            referer: req.headers.referer || "",
+            accept: req.headers.accept || "",
+            host: req.headers.host || "",
+            tenant: req.headers.tenant || "",
+            hostname: req.hostname || "",
+            port: req['port'] || "",
+            url: req.url || "",
+            method: req.method || "",
+            baseUrl: req.baseUrl || "",
+            originalUrl: req.originalUrl || "",
+            params: req.params || "",
+            query: req.query || "",
+            protocol: req.protocol || "",
+            client_ip: ip_address || "",
+            host_ip: req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.headers.host || "",
+        }
+    } catch (error) {
+        return error
+    }
+}
+
+export { getUrlInfo, getOriginalUrlInfo };
